@@ -1,35 +1,92 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { styled } from 'styled-components';
+import imgLogo from './assets/logo.png';
+import { useState } from 'react';
+import GameArea from './components/GameArea/GameArea';
 
-function App() {
-  const [count, setCount] = useState(0)
+
+
+export default function App() {
+  const [telaInicial, setTelaInicial] = useState(true);
+
+  function iniciarJogo() {
+    setTelaInicial(false);
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      {telaInicial ? (
+        <AppArea>
+          <img src={imgLogo} alt="Logo-Image" />
+          <h1>ZapRecall</h1>
+          <BotaoIniciar onClick={iniciarJogo}>Iniciar Recall!</BotaoIniciar>
+        </AppArea>
+      ) : (
+        <GameArea />
+      )}
+    </div>
+  );
 }
 
-export default App
+
+const AppArea = styled.div`
+  background-color: #FB6B6B;
+  width: 375px;
+  height: 667px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;
+  img {
+    width: 136px;
+    height: 161px;
+    transition: all 0.3s;
+    cursor: pointer;
+    
+}img:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.3);
+  }
+  
+  h1{
+  width: 257px;
+  height: 59px;
+  font-family: 'Righteous';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 45px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.012em;
+  color: #FFFFFF;
+  margin-left: 90px;
+  }
+`
+const BotaoIniciar = styled.button`
+  width: 246px;
+  height: 54px;
+  background: #FFFFFF;
+  border: 1px solid #D70900;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: 'Recursive';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #D70900;
+  
+
+  &:hover {
+    background-color: #fcd3d3; 
+    transition: 0.5s;
+    opacity: 0.7;
+  }
+`;
+
