@@ -7,6 +7,7 @@ import GameArea from './components/GameArea/GameArea';
 
 export default function App() {
   const [telaInicial, setTelaInicial] = useState(true);
+  
 
   function iniciarJogo() {
     setTelaInicial(false);
