@@ -42,7 +42,7 @@ export default function Pergunta(props) {
                         :
                         <ButtonGrup>
                             <ButtonRed>Não lembrei</ButtonRed>
-                            <ButtonOrange>Quqase não lembrei</ButtonOrange>
+                            <ButtonOrange>Quase não lembrei</ButtonOrange>
                             <ButtonGreen>Zap!</ButtonGreen>
                         </ButtonGrup>
 
