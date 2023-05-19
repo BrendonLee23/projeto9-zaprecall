@@ -44,7 +44,7 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-
+* { user-select: none; } 
 `
 
 export default Reset
