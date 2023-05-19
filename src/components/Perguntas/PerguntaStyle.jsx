@@ -41,7 +41,8 @@ export const OpenCard = styled.div`
     align-items: center;
     justify-content: space-between;
     padding-left: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 40px;
+    padding-top: 15px;
     display: inline;
     h1{
     font-family: 'Recursive';
@@ -57,7 +58,7 @@ export const OpenCard = styled.div`
     height: 18px;
     padding-right: 10px;
     margin-left: 256px;
-    margin-bottom: -10px;
+    margin-bottom: -30px;
     cursor: pointer;
     display: inline;
     }
@@ -71,6 +72,8 @@ export const OpenCard = styled.div`
 export const ButtonGrup = styled.div`
     display: flex;
     gap:15px;
+    margin-top: 35px;
+    margin-bottom: -20px;
 `
 export const ButtonRed = styled.button`
     width: 85.17px;
@@ -98,7 +101,7 @@ export const ButtonRed = styled.button`
 export const ButtonOrange = styled.button`
     width: 85.17px;
     height: 37.17px;
-    background: #fa7900;
+    background: #faa200;
     border-radius: 5px;
     font-family: 'Recursive';
     font-style: normal;
@@ -111,9 +114,9 @@ export const ButtonOrange = styled.button`
     text-align: center;
     color: #FFFFFF;
     cursor: pointer;
-    border-color: #f99203;
+    border-color:#faa200;
     &:hover {
-    background-color: #fa741b; 
+    background-color: #ffaf1b;
     transition: 0.5s;
     opacity: 0.7;
 }

@@ -40,6 +40,7 @@ const AppArea = styled.div`
   img {
     width: 136px;
     height: 161px;
+    margin-bottom: 25px;
     transition: all 0.3s;
     cursor: pointer;
     
