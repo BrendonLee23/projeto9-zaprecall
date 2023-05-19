@@ -46,18 +46,21 @@ export default function Pergunta(props) {
         setDeck(3);
         setCor("green");
         setContador(contador + 1); // Atualiza o contador
+        console.log(contador)
     }
 
     function deckMeioAcerto() {
         setDeck(3);
         setCor("orange");
         setContador(contador + 1); // Atualiza o contador
+        console.log(contador)
     }
 
     function deckErro() {
         setDeck(3);
         setCor("red");
         setContador(contador + 1);
+        console.log(contador)
     }
 
 
