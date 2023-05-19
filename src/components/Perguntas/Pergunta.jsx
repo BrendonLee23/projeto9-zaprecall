@@ -14,6 +14,7 @@ import { ButtonOrange } from "./PerguntaStyle";
 import { ButtonRed } from "./PerguntaStyle";
 
 
+
 export default function Pergunta(props) {
     const [deck, setDeck] = useState(0);
     const [cor, setCor] = useState()
@@ -39,6 +40,8 @@ export default function Pergunta(props) {
     function ativaDeck3() {
         setDeck(2);
     }
+
+
     function deckAcerto() {
         setDeck(3);
         setCor("green");
@@ -55,7 +58,6 @@ export default function Pergunta(props) {
         setDeck(3);
         setCor("red");
         setContador(contador + 1);
-        console.log(contador) // Atualiza o contador
     }
 
 
@@ -94,4 +96,5 @@ export default function Pergunta(props) {
         </>
     )
 }
+
 

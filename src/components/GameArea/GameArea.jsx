@@ -17,7 +17,7 @@ export default function GameArea(){
                 <h1>ZapRecall</h1>
             </Topo>
             <JogoArea contador={contador} setContador={setContador}/>
-            <Rodape data-test="footer">
+            <Rodape>
                 <h1>{contador}/8 CONCLUÍDOS</h1>
             </Rodape>
         </TelaJogo>
