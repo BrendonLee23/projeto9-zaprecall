@@ -2,7 +2,7 @@ import  styled  from "styled-components"
 
 export const Jogo = styled.div`
     width: 340px;
-    height: 350px;
+    height: 800px;
     overflow: auto;
     display: flex;
     flex-direction: column;

@@ -62,28 +62,29 @@ export default function Pergunta(props) {
     function verificaDeck() {
 
         if (deck === 0) {
-            return <Card>
-                <h1>Pergunta {props.numero}</h1>
-                <img onClick={ativaDeck2} src={setaPlay} alt="seta Play" />
+            return <Card data-test="flashcard" >
+                <h1 data-test="flashcard-text" >Pergunta {props.numero}</h1>
+                <img data-test="play-btn" onClick={ativaDeck2} src={setaPlay} alt="seta Play" />
             </Card>
         } if (deck === 1) {
-            return <OpenCard>
-                <h1>{cards[props.numero - 1].question}</h1>
+            return <OpenCard data-test="flashcard" >
+                <h1 data-test="flashcard-text" >{cards[props.numero - 1].question}</h1>
                 <img onClick={ativaDeck3} src={setaVirar} alt="Seta Virar" />
             </OpenCard>
         } if (deck === 2) {
-            return <OpenCard>
-                <h1>{cards[props.numero - 1].answer}</h1>
+            return <OpenCard data-test="flashcard" >
+                <h1 data-test="flashcard-text" >{cards[props.numero - 1].answer}</h1>
                 <ButtonGrup>
-                    <ButtonRed onClick={deckErro}  >Não lembrei</ButtonRed>
-                    <ButtonOrange onClick={deckMeioAcerto} >Quase não lembrei</ButtonOrange>
-                    <ButtonGreen onClick={deckAcerto} >Zap!</ButtonGreen>
+                    <ButtonRed data-test="no-btn" onClick={deckErro}  >Não lembrei</ButtonRed>
+                    <ButtonOrange data-test="partial-btn" onClick={deckMeioAcerto} >Quase não lembrei</ButtonOrange>
+                    <ButtonGreen data-test="zap-btn" onClick={deckAcerto} >Zap!</ButtonGreen>
                 </ButtonGrup>
             </OpenCard>
         } if (deck === 3) {
-            return <LastCard>
-                {cor === "red" ? <h1>Pergunta {props.numero}</h1> : cor === "orange" ? <h2>Pergunta {props.numero}</h2> : cor === "green" ? <h3>Pergunta {props.numero}</h3> : ""}
-                <img src={cor === "green" ? iconGreen : cor === "orange" ? iconOrange : cor === "red" ? iconRed : ""} alt={cor} />
+            return <LastCard data-test="flashcard" >
+                {cor === "red" ? <h1 data-test="flashcard-text" >Pergunta {props.numero}</h1> : cor === "orange" ? <h2 data-test="flashcard-text" >Pergunta {props.numero}</h2> : cor === "green" ? <h3 data-test="flashcard-text" >Pergunta {props.numero}</h3> : ""}
+
+                {cor === "green" ? <img data-test="zap-icon" src={iconGreen} alt={cor}/> : cor === "orange" ? <img data-test="partial-icon" src={iconOrange} alt={cor}/> : cor === "red" ? <img data-test="no-icon" src={iconRed} alt={cor}/> : ""}
             </LastCard>
         }
     }

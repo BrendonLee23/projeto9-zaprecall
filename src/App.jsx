@@ -19,7 +19,7 @@ export default function App() {
         <AppArea>
           <img src={imgLogo} alt="Logo-Image" />
           <h1>ZapRecall</h1>
-          <BotaoIniciar onClick={iniciarJogo}>Iniciar Recall!</BotaoIniciar>
+          <BotaoIniciar data-test="start-btn" onClick={iniciarJogo}>Iniciar Recall!</BotaoIniciar>
         </AppArea>
       ) : (
         <GameArea />

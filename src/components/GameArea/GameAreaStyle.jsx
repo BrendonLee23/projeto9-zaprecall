@@ -13,7 +13,7 @@ export const TelaJogo = styled.div`
 
 export const Topo = styled.div`
     width: 300px;
-    height: 150px;
+    height: 250px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -45,7 +45,7 @@ export const Topo = styled.div`
 
 export const Rodape = styled.div`
     width: 375px;
-    height: 70px;
+    height: 150px;
     background: #FFFFFF;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
     display: flex;
