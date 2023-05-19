@@ -6,16 +6,16 @@ import GameArea from './components/GameArea/GameArea';
 
 
 export default function App() {
-  const [telaInicial, setTelaInicial] = useState(true);
+  const [tela, setTela] = useState(true);
 
   function iniciarJogo() {
-    setTelaInicial(false);
+    setTela(false);
   }
 
 
   return (
     <div>
-      {telaInicial ? (
+      {tela? (
         <AppArea>
           <img src={imgLogo} alt="Logo-Image" />
           <h1>ZapRecall</h1>

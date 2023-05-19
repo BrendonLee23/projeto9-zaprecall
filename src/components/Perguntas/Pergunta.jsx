@@ -14,12 +14,10 @@ import { ButtonOrange } from "./PerguntaStyle";
 import { ButtonRed } from "./PerguntaStyle";
 
 
-
 export default function Pergunta(props) {
     const [deck, setDeck] = useState(0);
     const [cor, setCor] = useState()
     const { contador, setContador } = props
-
 
     const cards = [
         { question: "O que é JSX?", answer: "Uma extensão da linguagem JavaScript" },
@@ -32,15 +30,12 @@ export default function Pergunta(props) {
         { question: "Usamos estado (state) para __", answer: "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente" }
     ]
 
-
-
     function ativaDeck2() {
         setDeck(1);
     }
     function ativaDeck3() {
         setDeck(2);
     }
-
 
     function deckAcerto() {
         setDeck(3);
@@ -63,9 +58,7 @@ export default function Pergunta(props) {
         console.log(contador)
     }
 
-
     function verificaDeck() {
-
         if (deck === 0) {
             return <Card data-test="flashcard" >
                 <h1 data-test="flashcard-text" >Pergunta {props.numero}</h1>
@@ -91,8 +84,8 @@ export default function Pergunta(props) {
                 {cor === "green" ? <img data-test="zap-icon" src={iconGreen} alt={cor}/> : cor === "orange" ? <img data-test="partial-icon" src={iconOrange} alt={cor}/> : cor === "red" ? <img data-test="no-icon" src={iconRed} alt={cor}/> : ""}
             </LastCard>
         }
-        
     }
+
     return (
         <>
             {verificaDeck()}
