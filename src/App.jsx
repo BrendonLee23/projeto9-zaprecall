@@ -7,11 +7,13 @@ import GameArea from './components/GameArea/GameArea';
 
 export default function App() {
   const [telaInicial, setTelaInicial] = useState(true);
-  
+  const [data, setData] = useState("")
 
   function iniciarJogo() {
     setTelaInicial(false);
+    setData("start-btn");
   }
+
 
   return (
     <div>
@@ -19,7 +21,7 @@ export default function App() {
         <AppArea>
           <img src={imgLogo} alt="Logo-Image" />
           <h1>ZapRecall</h1>
-          <BotaoIniciar data-test="start-btn" onClick={iniciarJogo}>Iniciar Recall!</BotaoIniciar>
+          <BotaoIniciar data-test={data} onClick={iniciarJogo}>Iniciar Recall!</BotaoIniciar>
         </AppArea>
       ) : (
         <GameArea />

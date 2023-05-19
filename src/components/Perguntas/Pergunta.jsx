@@ -62,17 +62,17 @@ export default function Pergunta(props) {
     function verificaDeck() {
 
         if (deck === 0) {
-            return <Card data-test="flashcard" >
+            return <Card>
                 <h1 data-test="flashcard-text" >Pergunta {props.numero}</h1>
                 <img data-test="play-btn" onClick={ativaDeck2} src={setaPlay} alt="seta Play" />
             </Card>
         } if (deck === 1) {
-            return <OpenCard data-test="flashcard" >
+            return <OpenCard>
                 <h1 data-test="flashcard-text" >{cards[props.numero - 1].question}</h1>
-                <img onClick={ativaDeck3} src={setaVirar} alt="Seta Virar" />
+                <img data-test="turn-btn" onClick={ativaDeck3} src={setaVirar} alt="Seta Virar" />
             </OpenCard>
         } if (deck === 2) {
-            return <OpenCard data-test="flashcard" >
+            return <OpenCard>
                 <h1 data-test="flashcard-text" >{cards[props.numero - 1].answer}</h1>
                 <ButtonGrup>
                     <ButtonRed data-test="no-btn" onClick={deckErro}  >Não lembrei</ButtonRed>
@@ -81,15 +81,16 @@ export default function Pergunta(props) {
                 </ButtonGrup>
             </OpenCard>
         } if (deck === 3) {
-            return <LastCard data-test="flashcard" >
+            return <LastCard>
                 {cor === "red" ? <h1 data-test="flashcard-text" >Pergunta {props.numero}</h1> : cor === "orange" ? <h2 data-test="flashcard-text" >Pergunta {props.numero}</h2> : cor === "green" ? <h3 data-test="flashcard-text" >Pergunta {props.numero}</h3> : ""}
 
                 {cor === "green" ? <img data-test="zap-icon" src={iconGreen} alt={cor}/> : cor === "orange" ? <img data-test="partial-icon" src={iconOrange} alt={cor}/> : cor === "red" ? <img data-test="no-icon" src={iconRed} alt={cor}/> : ""}
             </LastCard>
         }
+        
     }
     return (
-        <>
+        < >
             {verificaDeck()}
         </>
     )
