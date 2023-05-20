@@ -4,16 +4,16 @@ import styled  from "styled-components";
 export const TelaJogo = styled.div`
     background-color: #FB6B6B;
     width: 375px;
-    height: 667px;
     display: flex;
     flex-direction: column;
     justify-content: center;  
     align-items: center;
+    padding-bottom: 220px;
 `
 
 export const Topo = styled.div`
     width: 300px;
-    height: 250px;
+    height: 240px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -26,6 +26,7 @@ export const Topo = styled.div`
     -webkit-transform: scale(1.5);
     transform: scale(1.3);
 }
+
     h1{
         width: 203.17px;
         height: 44px;
@@ -45,13 +46,15 @@ export const Topo = styled.div`
 
 export const Rodape = styled.div`
     width: 375px;
-    height: 150px;
+    height: 100px;
     background: #FFFFFF;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    bottom: 0;
+    position: fixed;
 
     h1{
         font-family: 'Recursive';

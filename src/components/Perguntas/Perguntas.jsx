@@ -6,6 +6,7 @@ import Pergunta from "./Pergunta"
 export default function Perguntas(props) {
 
     const {contador, setContador} = props
+    const {resultado, setResultado} = props;
 
     const array = [
         {num: 1},
@@ -20,7 +21,16 @@ export default function Perguntas(props) {
 
     return (
         <> 
-            {array.map( (p) =>  <Pergunta contador={contador} setContador={setContador}  key={p.num} numero={p.num} /> )}
+            {array.map( (p) =>  
+            <Pergunta
+                contador={contador}
+                setContador={setContador}  
+                key={p.num} 
+                numero={p.num} 
+                resultado={resultado}
+                setResultado={setResultado}
+                /> 
+            )}
         </>
     )
 }

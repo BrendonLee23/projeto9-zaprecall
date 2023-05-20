@@ -28,6 +28,10 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 ol, ul {
     list-style: none;

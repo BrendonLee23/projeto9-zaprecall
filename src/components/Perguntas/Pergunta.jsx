@@ -18,6 +18,7 @@ export default function Pergunta(props) {
     const [deck, setDeck] = useState(0);
     const [cor, setCor] = useState()
     const { contador, setContador } = props
+    const {resultado, setResultado} = props;
 
     const cards = [
         { question: "O que é JSX?", answer: "Uma extensão da linguagem JavaScript" },
@@ -37,25 +38,31 @@ export default function Pergunta(props) {
         setDeck(2);
     }
 
-    function deckAcerto() {
+    function deckAcerto(cor) {
         setDeck(3);
         setCor("green");
         setContador(contador + 1); // Atualiza o contador
-        console.log(contador)
+        const novoResultado = [...resultado, cor]
+        setResultado(novoResultado);
+        console.log(novoResultado)
     }
 
-    function deckMeioAcerto() {
+    function deckMeioAcerto(cor) {
         setDeck(3);
         setCor("orange");
         setContador(contador + 1); // Atualiza o contador
-        console.log(contador)
+        const novoResultado = [...resultado, cor]
+        setResultado(novoResultado);
+        console.log(novoResultado)
     }
 
-    function deckErro() {
+    function deckErro(cor) {
         setDeck(3);
         setCor("red");
         setContador(contador + 1);
-        console.log(contador)
+        const novoResultado = [...resultado, cor]
+        setResultado(novoResultado);
+        console.log(novoResultado)
     }
 
     function verificaDeck() {
@@ -73,9 +80,9 @@ export default function Pergunta(props) {
             return <OpenCard data-test="flashcard" >
                 <h1 data-test="flashcard-text" >{cards[props.numero - 1].answer}</h1>
                 <ButtonGrup>
-                    <ButtonRed data-test="no-btn" onClick={deckErro}  >Não lembrei</ButtonRed>
-                    <ButtonOrange data-test="partial-btn" onClick={deckMeioAcerto} >Quase não lembrei</ButtonOrange>
-                    <ButtonGreen data-test="zap-btn" onClick={deckAcerto} >Zap!</ButtonGreen>
+                    <ButtonRed data-test="no-btn" onClick={() =>  deckErro("vermelho", "") }  >Não lembrei</ButtonRed>
+                    <ButtonOrange data-test="partial-btn" onClick={() => deckMeioAcerto("laranja")} >Quase não lembrei</ButtonOrange>
+                    <ButtonGreen data-test="zap-btn" onClick={() => deckAcerto("verde")} >Zap!</ButtonGreen>
                 </ButtonGrup>
             </OpenCard>
         } if (deck === 3) {

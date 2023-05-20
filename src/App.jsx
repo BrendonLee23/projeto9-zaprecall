@@ -7,6 +7,7 @@ import GameArea from './components/GameArea/GameArea';
 
 export default function App() {
   const [tela, setTela] = useState(true);
+  const [resultado, setResultado] = useState([])
 
   function iniciarJogo() {
     setTela(false);
@@ -22,7 +23,7 @@ export default function App() {
           <BotaoIniciar data-test="start-btn" onClick={iniciarJogo}>Iniciar Recall!</BotaoIniciar>
         </AppArea>
       ) : (
-        <GameArea />
+        <GameArea resultado={resultado} setResultado={setResultado} />
       )}
     </div>
   );
@@ -32,7 +33,7 @@ export default function App() {
 const AppArea = styled.div`
   background-color: #FB6B6B;
   width: 375px;
-  height: 667px;
+  height: 918px;
   display: flex;
   flex-direction: column;
   justify-content: center;  
@@ -63,6 +64,7 @@ const AppArea = styled.div`
   letter-spacing: -0.012em;
   color: #FFFFFF;
   margin-left: 90px;
+  margin-bottom: 30px;
   }
 `
 const BotaoIniciar = styled.button`
