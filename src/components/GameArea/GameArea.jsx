@@ -43,13 +43,13 @@ export default function GameArea(props) {
                         </>
                     }
                     <GrupoIcons>
-                        {resultado.map((i) => <img data={} key={i.id} src={i === "verde" ? iconGreen : i === "vermelho" ? iconRed : i === "laranja" ? iconOrange : ""} alt="icon" />)}
+                        {resultado.map((i) => <img  key={i.id} src={i === "verde" ? iconGreen : i === "vermelho" ? iconRed : i === "laranja" ? iconOrange : ""} alt="icon" />)}
                     </GrupoIcons>
                 </RodapeBonus> :
                 <Rodape>
                     <h1>{contador}/8 CONCLUÍDOS</h1>
                     <GrupoIcons>
-                        {resultado.map((i) => <img data={} key={i.id} src={i === "verde" ? iconGreen : i === "vermelho" ? iconRed : i === "laranja" ? iconOrange : ""} alt="icone" />)}
+                        {resultado.map((i) => <img  key={i.id} src={i === "verde" ? iconGreen : i === "vermelho" ? iconRed : i === "laranja" ? iconOrange : ""} alt="icone" />)}
                     </GrupoIcons>
                 </Rodape>}
         </TelaJogo>
