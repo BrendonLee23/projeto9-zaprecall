@@ -28,7 +28,7 @@ export default function GameArea(props) {
                 setResultado={setResultado}
             />
             {contador === 8 ?
-                <RodapeBonus>
+                <RodapeBonus data-test="footer">
                     {resultado.includes("vermelho") ?
                         <>
                             <h1>😥  Putz...</h1>
@@ -46,7 +46,7 @@ export default function GameArea(props) {
                         {resultado.map((i) => <img  key={i.id} src={i === "verde" ? iconGreen : i === "vermelho" ? iconRed : i === "laranja" ? iconOrange : ""} alt="icon" />)}
                     </GrupoIcons>
                 </RodapeBonus> :
-                <Rodape>
+                <Rodape data-test="footer">
                     <h1>{contador}/8 CONCLUÍDOS</h1>
                     <GrupoIcons>
                         {resultado.map((i) => <img  key={i.id} src={i === "verde" ? iconGreen : i === "vermelho" ? iconRed : i === "laranja" ? iconOrange : ""} alt="icone" />)}
