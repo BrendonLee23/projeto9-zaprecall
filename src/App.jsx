@@ -8,6 +8,7 @@ import GameArea from './components/GameArea/GameArea';
 export default function App() {
   const [tela, setTela] = useState(true);
   const [resultado, setResultado] = useState([])
+  console.log(resultado)
 
   function iniciarJogo() {
     setTela(false);

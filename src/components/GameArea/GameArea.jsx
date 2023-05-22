@@ -30,26 +30,26 @@ export default function GameArea(props) {
             {contador === 8 ?
                 <RodapeBonus data-test="footer">
                     {resultado.includes("vermelho") ?
-                        <>
+                        <TextoFinal data-test="finish-text">
                             <h1>😥  Putz...</h1>
                             <h2>Ainda faltam alguns... Mas não desanime!</h2>
                             <h3>{contador}/8 CONCLUÍDOS</h3>
-                        </>
+                        </TextoFinal>
                         :
-                        <>
+                        <TextoFinal data-test="finish-text">
                             <h1>🥳  Parabéns</h1>
                             <h2>Você não esqueceu de nenhum flashcard!</h2>
                             <h3>{contador}/8 CONCLUÍDOS</h3>
-                        </>
+                        </TextoFinal>
                     }
                     <GrupoIcons>
-                        {resultado.map((i) => <img  key={i.id} src={i === "verde" ? iconGreen : i === "vermelho" ? iconRed : i === "laranja" ? iconOrange : ""} alt="icon" />)}
+                        {resultado.map((i) => <img key={i.length} data-test={i === "verde" ? "zap-icon" : i === "laranja" ? "partial-icon" : i === "vermelho" ? "no-icon" : "" } src={i === "verde" ? iconGreen : i === "vermelho" ? iconRed : i === "laranja" ? iconOrange : ""} alt="icon" />)}
                     </GrupoIcons>
                 </RodapeBonus> :
                 <Rodape data-test="footer">
                     <h1>{contador}/8 CONCLUÍDOS</h1>
                     <GrupoIcons>
-                        {resultado.map((i) => <img  key={i.id} src={i === "verde" ? iconGreen : i === "vermelho" ? iconRed : i === "laranja" ? iconOrange : ""} alt="icone" />)}
+                        {resultado.map((i) => <img key={i.length} data-test={i === "verde" ? "zap-icon" : i === "laranja" ? "partial-icon" : i === "vermelho" ? "no-icon" : "" } src={i === "verde" ? iconGreen : i === "vermelho" ? iconRed : i === "laranja" ? iconOrange : ""} alt="icone" />)}
                     </GrupoIcons>
                 </Rodape>}
         </TelaJogo>
@@ -107,5 +107,14 @@ const GrupoIcons = styled.div`
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     `
+
+    const TextoFinal = styled.div`
+        display: flex;
+        flex-direction: column;
+        flex-direction: column;
+        justify-content: center;  
+        align-items: center;
+`
